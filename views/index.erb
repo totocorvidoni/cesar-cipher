@@ -7,16 +7,26 @@
 </head>
 <body>
   <h1>Cesar's Cipher</h1>
-  <p>Hello, Norbert here.</p>
-  <p> The point of this program is to encript or decode a message for you. <br>
-      To do this I need two things: a message and a key <br>
-      Keep in mind that your key should be a number between 1 and 26</p>
+  <p>Protecting your privacy since XLIX BC<p>
+  <p>
+    In order to encript or decript your message <br>
+    You must provide two things: the <strong>message</strong> and a <strong>key</strong>. <br>
+    Keep in mind that your key should be a number between 1 and 26.
+  </p>
   <form>
     <label for="encode">Message to encript</label>
     <input type="text" name="encript">
     <label for="key">Key</label>
     <input type="number" name="key" min="1" max="26">
-    <input type="submit" value="Encript!">
+    <label for="method"></label><br>
+    Encript <input type="radio" name="method" value="encript">
+    Decript <input type="radio" name="method" value="decript"><br>
+    <input type="submit" value="Submit">
   </form>
+  <% unless message.nil? %>
+  <h3>Secret Message</h3>
+  <p><%= message %></p>      
+  <% end %>
+  
 </body>
 </html>
